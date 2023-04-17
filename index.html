@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChallengeMixer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ChallengeMixer</h1>
+      <nav>
+        <button id="sign-in" onclick="signIn()">Sign In</button>
+        <button id="sign-out" onclick="signOut()" style="display: none">
+          Sign Out
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="challenge-container">
+        <h2 id="challenge-title">Click the button to get a challenge</h2>
+        <button id="generate-challenge" onclick="getRandomChallenge()">
+          Generate Challenge
+        </button>
+        <div id="add-challenge-container" style="display: none">
+          <h3>Add a custom challenge</h3>
+          <input
+            type="text"
+            id="new-challenge"
+            placeholder="Enter your challenge"
+          />
+          <button onclick="addChallenge()">Add Challenge</button>
+        </div>
+      </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Replace with your Firebase project configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCwOMls1BBMzcDZYzJbrjC2T71EqQN0dXQ",
+        authDomain: "challenge-mixer.firebaseapp.com",
+        projectId: "challenge-mixer",
+        storageBucket: "challenge-mixer.appspot.com",
+        messagingSenderId: "751728360349",
+        appId: "1:751728360349:web:90c24c2af745598abfcd74",
+        measurementId: "G-GQDFK66P3H",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
